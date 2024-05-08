@@ -4,7 +4,8 @@ from flask import Flask
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-pipe = pipeline('text-classification')
+model_name = "distilbert/distilbert-base-uncased-finetuned-sst-2-english"
+pipe = pipeline('text-classification', model=model_name)
 
 
 @app.route("/")
